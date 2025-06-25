@@ -161,10 +161,10 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
   const StartButton = () => (
     <button
       onClick={() => setShowForm(true)}
-      className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+      className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-teal-500 to-pink-500 text-white font-bold rounded-xl hover:from-teal-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-lg tracking-wide uppercase"
     >
-      <Play className="w-5 h-5" />
-      Start Program Closeout
+      <Play className="w-6 h-6" />
+      Begin Closeout Process
     </button>
   );
 
@@ -173,30 +173,30 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-pink-50">
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
           {/* Enhanced Progress Bar */}
-          <div className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-40 py-6">
+          <div className="bg-white/90 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-40 py-6">
             <div className="max-w-5xl mx-auto px-4">
               {/* Progress Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="bg-blue-600 p-2 rounded-lg">
+                  <div className="bg-gradient-to-r from-teal-500 to-pink-500 p-2 rounded-lg shadow-lg">
                     <currentStepData.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
                       Step {currentStep} of {STEPS.length}: {currentStepData.name}
                     </h2>
-                    <p className="text-gray-600 text-sm">{currentStepData.description}</p>
+                    <p className="text-gray-600">{currentStepData.description}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-blue-600">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-teal-500 to-pink-500 bg-clip-text text-transparent">
                     {Math.round((currentStep / STEPS.length) * 100)}%
                   </div>
-                  <div className="text-xs text-gray-500">Complete</div>
+                  <div className="text-sm text-gray-500 font-medium">Complete</div>
                 </div>
               </div>
 
@@ -215,7 +215,7 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
                             isCompleted
                               ? 'bg-emerald-500 border-emerald-500 text-white'
                               : isCurrent
-                              ? 'bg-blue-600 border-blue-600 text-white scale-110 shadow-lg'
+                              ? 'bg-gradient-to-r from-teal-500 to-pink-500 border-transparent text-white scale-110 shadow-lg'
                               : 'bg-white border-gray-300 text-gray-400'
                           }`}
                         >
@@ -226,7 +226,7 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
                           )}
                         </div>
                         <span className={`text-xs mt-2 font-medium transition-colors hidden sm:block ${
-                          isCurrent ? 'text-blue-600' : isCompleted ? 'text-emerald-600' : 'text-gray-500'
+                          isCurrent ? 'text-teal-600' : isCompleted ? 'text-emerald-600' : 'text-gray-500'
                         }`}>
                           {step.shortName}
                         </span>
@@ -238,7 +238,7 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
                 {/* Progress Line */}
                 <div className="absolute top-6 left-6 right-6 h-0.5 bg-gray-200 -z-10">
                   <div 
-                    className="h-full bg-gradient-to-r from-emerald-500 to-blue-600 transition-all duration-500 ease-out"
+                    className="h-full bg-gradient-to-r from-teal-500 to-pink-500 transition-all duration-500 ease-out"
                     style={{ width: `${((currentStep - 1) / (STEPS.length - 1)) * 100}%` }}
                   />
                 </div>
@@ -284,7 +284,7 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
                   {currentStep === STEPS.length ? (
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                       <FileText className="w-5 h-5" />
                       Generate PDF Report
@@ -294,7 +294,7 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
                       type="button"
                       onClick={handleNext}
                       disabled={isValidating}
-                      className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-teal-500 to-pink-500 text-white font-semibold rounded-xl hover:from-teal-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isValidating ? (
                         <>
@@ -316,9 +316,9 @@ export function CloseoutForm({ onSubmit, onSaveDraft }: CloseoutFormProps) {
               {currentStep < STEPS.length && (
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <p className="text-sm text-gray-600 flex items-center gap-2">
-                    <span>Next:</span>
-{React.createElement(STEPS[currentStep].icon, { className: "w-4 h-4" })}
-                    <span className="font-medium">{STEPS[currentStep].name}</span>
+                    <span className="font-medium text-teal-600">Next:</span>
+{React.createElement(STEPS[currentStep].icon, { className: "w-4 h-4 text-pink-500" })}
+                    <span className="font-semibold">{STEPS[currentStep].name}</span>
                     <span>- {STEPS[currentStep].description}</span>
                   </p>
                 </div>

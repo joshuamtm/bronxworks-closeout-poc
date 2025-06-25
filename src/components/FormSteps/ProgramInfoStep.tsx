@@ -9,17 +9,19 @@ export function ProgramInfoStep() {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center">
-        <div className="bg-blue-100 w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-          <Building className="w-8 h-8 text-blue-600" />
+        <div className="bg-gradient-to-r from-bronx-teal-100 to-bronx-pink-100 w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+          <Building className="w-10 h-10 text-bronx-teal-600" />
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Program Information</h2>
-        <p className="text-gray-600">Let's start with the basic details about your program</p>
+        <h2 className="text-4xl font-bold text-gray-900 mb-3 tracking-tight">Program Information</h2>
+        <p className="text-lg text-gray-600">Let's start with the essential details about your program and location</p>
       </div>
 
       {/* Program Details Section */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-          <Info className="w-5 h-5 text-blue-600" />
+      <div className="bg-gradient-to-r from-bronx-teal-50 to-bronx-teal-100 rounded-2xl p-8 border border-bronx-teal-200 shadow-sm">
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+          <div className="bg-bronx-teal-500 p-2 rounded-lg">
+            <Info className="w-5 h-5 text-white" />
+          </div>
           Program Details
         </h3>
         
@@ -30,7 +32,7 @@ export function ProgramInfoStep() {
             </label>
             <input
               {...register('programName', { required: 'Program name is required' })}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-0 transition-colors bg-white"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-teal-500 focus:ring-2 focus:ring-bronx-teal-100 transition-all bg-white shadow-sm"
               placeholder="e.g., Early Childhood Education Center"
             />
             {errors.programName && (
@@ -47,7 +49,7 @@ export function ProgramInfoStep() {
             </label>
             <input
               {...register('programType', { required: 'Program type is required' })}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-0 transition-colors bg-white"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-teal-500 focus:ring-2 focus:ring-bronx-teal-100 transition-all bg-white shadow-sm"
               placeholder="e.g., Education, Social Services, Youth Development"
             />
             {errors.programType && (
@@ -60,7 +62,7 @@ export function ProgramInfoStep() {
 
           <div className="space-y-2">
             <label className="block text-sm font-semibold text-gray-900 flex items-center gap-2">
-              <UsersIcon className="w-4 h-4 text-blue-600" />
+              <UsersIcon className="w-4 h-4 text-bronx-teal-600" />
               Total Staff Count *
             </label>
             <input
@@ -69,7 +71,7 @@ export function ProgramInfoStep() {
                 required: 'Staff count is required',
                 min: { value: 1, message: 'Must have at least 1 staff member' }
               })}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-0 transition-colors bg-white"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-teal-500 focus:ring-2 focus:ring-bronx-teal-100 transition-all bg-white shadow-sm"
               placeholder="10"
               min="1"
             />
@@ -84,9 +86,11 @@ export function ProgramInfoStep() {
       </div>
 
       {/* Timeline Section */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-          <Calendar className="w-5 h-5 text-amber-600" />
+      <div className="bg-gradient-to-r from-bronx-pink-50 to-bronx-pink-100 rounded-2xl p-8 border border-bronx-pink-200 shadow-sm">
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+          <div className="bg-bronx-pink-500 p-2 rounded-lg">
+            <Calendar className="w-5 h-5 text-white" />
+          </div>
           Important Dates
         </h3>
         
@@ -99,7 +103,7 @@ export function ProgramInfoStep() {
             <input
               type="date"
               {...register('lastOperationalDate', { required: 'Last operational date is required' })}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-0 transition-colors bg-white"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-pink-500 focus:ring-2 focus:ring-bronx-pink-100 transition-all bg-white shadow-sm"
             />
             {errors.lastOperationalDate && (
               <div className="flex items-center gap-2 text-red-600 text-sm mt-1">
@@ -117,7 +121,7 @@ export function ProgramInfoStep() {
             <input
               type="date"
               {...register('closeoutDate', { required: 'Closeout date is required' })}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-0 transition-colors bg-white"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-pink-500 focus:ring-2 focus:ring-bronx-pink-100 transition-all bg-white shadow-sm"
             />
             {errors.closeoutDate && (
               <div className="flex items-center gap-2 text-red-600 text-sm mt-1">
@@ -130,9 +134,11 @@ export function ProgramInfoStep() {
       </div>
 
       {/* Location Section */}
-      <div className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl p-6 border border-emerald-100">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-emerald-600" />
+      <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200 shadow-sm">
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+          <div className="bg-gradient-to-r from-bronx-teal-500 to-bronx-pink-500 p-2 rounded-lg">
+            <MapPin className="w-5 h-5 text-white" />
+          </div>
           Location Details
         </h3>
         
@@ -144,7 +150,7 @@ export function ProgramInfoStep() {
               </label>
               <input
                 {...register('location.building', { required: 'Building name is required' })}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors bg-white"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-teal-500 focus:ring-2 focus:ring-bronx-teal-100 transition-all bg-white shadow-sm"
                 placeholder="e.g., Main Building, Community Center"
               />
               {errors.location?.building && (
@@ -161,7 +167,7 @@ export function ProgramInfoStep() {
               </label>
               <input
                 {...register('location.floor')}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-0 transition-colors bg-white"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-bronx-teal-500 focus:ring-2 focus:ring-bronx-teal-100 transition-all bg-white shadow-sm"
                 placeholder="e.g., 3rd Floor, Ground Level"
               />
             </div>
@@ -189,12 +195,14 @@ export function ProgramInfoStep() {
       </div>
 
       {/* Help Text */}
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-        <p className="text-sm text-blue-800 flex items-start gap-2">
-          <Info className="w-4 h-4 mt-0.5 text-blue-600 flex-shrink-0" />
+      <div className="bg-gradient-to-r from-bronx-teal-50 to-bronx-pink-50 border border-bronx-teal-200 rounded-xl p-6">
+        <p className="text-sm text-gray-800 flex items-start gap-3">
+          <div className="bg-gradient-to-r from-bronx-teal-500 to-bronx-pink-500 p-1 rounded-full flex-shrink-0 mt-0.5">
+            <Info className="w-3 h-3 text-white" />
+          </div>
           <span>
-            <strong>Tip:</strong> Having accurate dates and location details helps IT and Operations plan the most efficient closeout process. 
-            If you're unsure about exact dates, provide your best estimate.
+            <strong className="text-bronx-teal-700">Pro Tip:</strong> Accurate dates and location details help our IT and Operations teams plan the most efficient closeout process. 
+            If you're unsure about exact dates, provide your best estimate – we can always adjust as needed.
           </span>
         </p>
       </div>
